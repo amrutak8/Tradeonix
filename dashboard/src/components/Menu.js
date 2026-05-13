@@ -30,7 +30,7 @@ const Menu = ({ setActiveDrawer, activeDrawer }) => {
     { withCredentials: true }
   );
 
-  window.location.href = "http://localhost:3000/login";
+  window.location.href = "https://tradeonix-frontend.vercel.app/login";
 };
 
   const menuClass = "menu";

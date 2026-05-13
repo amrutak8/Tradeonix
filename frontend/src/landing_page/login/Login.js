@@ -23,7 +23,7 @@ function Login() {
     
 
       
-      window.location.href = "http://localhost:3001";
+      window.location.href = "https://tradeonix-dashboard.vercel.app";
 
     } catch (err) {
       alert(err.response?.data?.message);

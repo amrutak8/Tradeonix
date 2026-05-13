@@ -40,7 +40,7 @@ const handleSignup = async () => {
       { withCredentials: true }
     );
 
-    window.location.href = "http://localhost:3001";
+    window.location.href = "https://tradeonix-dashboard.vercel.app";
 
   } catch (err) {
     setError(err.response?.data?.message);
