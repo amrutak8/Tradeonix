@@ -26,7 +26,7 @@ const app = express();
 
 /* ================= MIDDLEWARE ================= */
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001"],
+  origin: ["https://tradeonix-frontend.vercel.app/", "https://tradeonix-dashboard.vercel.app/"],
   credentials: true
 }));
 
@@ -281,7 +281,7 @@ app.post("/api/signup", async (req, res) => {
   userId: user._id,
 });
 
-    // 🔥 AUTO CREATE HOLDINGS FOR USER
+   
 const userHoldings = defaultHoldings.map(item => ({
   ...item,
   userId: user._id
@@ -289,7 +289,7 @@ const userHoldings = defaultHoldings.map(item => ({
 
 await HoldingsModel.insertMany(userHoldings);
 
-// 🔥 AUTO CREATE POSITIONS FOR USER
+
 const userPositions = defaultPositions.map(item => ({
   ...item,
   userId: user._id
@@ -319,8 +319,8 @@ await FundsModel.create({
 
   res.cookie("token", token, {
   httpOnly: true,
-  sameSite: "lax",   // ✅ IMPORTANT FIX
-  secure: false,
+  sameSite: "none",   
+  secure: true,
   maxAge: 7 * 24 * 60 * 60 * 1000
 });
 
@@ -359,8 +359,8 @@ app.post("/api/login", async (req, res) => {
 
   res.cookie("token", token, {
   httpOnly: true,
-  sameSite: "lax",   // ✅ IMPORTANT FIX
-  secure: false,
+  sameSite: "none",  
+  secure: true,
   maxAge: 7 * 24 * 60 * 60 * 1000
 });
 
