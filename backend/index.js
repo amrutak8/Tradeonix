@@ -65,17 +65,17 @@ app.use(express.json());
 // });
 
 // /* ================= JWT UTILS ================= */
-// const generateToken = (user) => {
-//   return jwt.sign(
-//     {
-//       id: user._id,
-//       username: user.username,
-//       email: user.email
-//     },
-//     process.env.JWT_SECRET,
-//     { expiresIn: "7d" }
-//   );
-// };
+const generateToken = (user) => {
+  return jwt.sign(
+    {
+      id: user._id,
+      username: user.username,
+      email: user.email
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "7d" }
+  );
+};
 
 /* ================= AUTH MIDDLEWARE ================= */
 const protect = require("./authmiddleware");
