@@ -25,13 +25,14 @@ const uri = process.env.MONGO_URL;
 const app = express();
 
 /* ================= MIDDLEWARE ================= */
-app.use(cors({
-  origin: [
-    "https://tradeonix-frontend.vercel.app",
-    "https://tradeonix-dashboard.vercel.app"
-  ],
-  credentials: true
-}));
+app.use(cors());
+// app.use(cors({
+//   origin: [
+//     "https://tradeonix-frontend.vercel.app",
+//     "https://tradeonix-dashboard.vercel.app"
+//   ],
+//   credentials: true
+// }));
 
 app.use(express.json());
 // app.use(cookieParser());
@@ -637,6 +638,11 @@ app.post("/withdrawFunds", protect, async (req, res) => {
       message: "Server error",
     });
   }
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Server crashed");
 });
 app.listen(PORT, () => {
   console.log("App started!");
