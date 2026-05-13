@@ -23,12 +23,9 @@ const Menu = ({ setActiveDrawer, activeDrawer }) => {
   //   setIsProfileDropdownOpen(!isProfileDropdownOpen);
   // };
 
-  const handleLogout = async () => {
-  await axios.post(
-    "https://tradeonix.onrender.com/api/logout",
-    {},
-    { withCredentials: true }
-  );
+ const handleLogout = () => {
+  localStorage.removeItem("token");
+  localStorage.removeItem("user");
 
   window.location.href = "https://tradeonix-frontend.vercel.app/login";
 };

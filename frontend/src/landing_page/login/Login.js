@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
-import "../auth.css"; // 
+import "../auth.css"; 
+import axios from "../axiosConfig";
 
 function Login() {
   const [form, setForm] = useState({
@@ -12,22 +12,18 @@ function Login() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleLogin = async () => {
-    try {
-      await axios.post(
-        "https://tradeonix.onrender.com/api/login",
-        form,
-        { withCredentials: true }
-      );
+const handleLogin = async () => {
+  try {
+    const res = await axios.post("/api/login", form);
 
-    
+    localStorage.setItem("token", res.data.token);
+    localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      
-      window.location.href = "https://tradeonix-dashboard.vercel.app";
+    window.location.href = "https://tradeonix-dashboard.vercel.app";
 
-    } catch (err) {
-      alert(err.response?.data?.message);
-    }
+  } catch (err) {
+    alert(err.response?.data?.message);
+  }
   };
 
   return (

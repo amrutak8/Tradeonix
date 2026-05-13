@@ -34,16 +34,20 @@ const handleSignup = async () => {
   }
 
   try {
-    await axios.post(
-      "https://tradeonix.onrender.com/api/signup",
-      form,
-      { withCredentials: true }
-    );
+    const res = await axios.post("/api/signup", form);
 
-    window.location.href = "https://tradeonix-dashboard.vercel.app";
+      
+      localStorage.setItem("token", res.data.token);
+
+     
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+
+      
+      window.location.href =
+        "https://tradeonix-dashboard.vercel.app";;
 
   } catch (err) {
-    setError(err.response?.data?.message);
+     setError(err.response?.data?.message || "Signup failed");
   }
 };
 

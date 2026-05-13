@@ -317,21 +317,17 @@ await FundsModel.create({
 
     const token = generateToken(user);
 
-  res.cookie("token", token, {
-  httpOnly: true,
-  sameSite: "none",   
-  secure: true,
-  maxAge: 7 * 24 * 60 * 60 * 1000
-});
+
 
     res.json({
-      message: "Signup successful",
-      user: {
-        id: user._id,
-        username: user.username,
-        email: user.email
-      }
-    });
+  message: "Signup successful",
+  token,
+  user: {
+    id: user._id,
+    username: user.username,
+    email: user.email
+  }
+});
 
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -357,21 +353,17 @@ app.post("/api/login", async (req, res) => {
 
     const token = generateToken(user);
 
-  res.cookie("token", token, {
-  httpOnly: true,
-  sameSite: "none",  
-  secure: true,
-  maxAge: 7 * 24 * 60 * 60 * 1000
-});
 
-    res.json({
-      message: "Login successful",
-      user: {
-        id: user._id,
-        username: user.username,
-        email: user.email
-      }
-    });
+   res.json({
+  message: "Login successful",
+  token,
+  user: {
+    id: user._id,
+    username: user.username,
+    email: user.email
+  }
+});
+    
 
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -388,6 +380,7 @@ app.post("/api/logout", (req, res) => {
 app.get("/api/me", protect, async (req, res) => {
   const user = await UserModel.findById(req.user.id).select("-password");
   res.json(user);
+  console.log("COOKIE RECEIVED:", req.cookies);
 });
 
 app.get("/allHoldings", protect, async (req, res) => {
