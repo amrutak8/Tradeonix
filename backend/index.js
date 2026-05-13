@@ -30,13 +30,11 @@ app.use(cors({
     "https://tradeonix-frontend.vercel.app",
     "https://tradeonix-dashboard.vercel.app"
   ],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
-app.options("*", cors());
 
-app.use(bodyParser.json());
+
+app.use(express.json());
 app.use(cookieParser());
 
 /* ================= JWT UTILS ================= */
@@ -53,7 +51,7 @@ const generateToken = (user) => {
 };
 
 /* ================= AUTH MIDDLEWARE ================= */
-const protect = require("./middleware/authMiddleware");
+const protect = require("./authmiddleware");
 
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [
