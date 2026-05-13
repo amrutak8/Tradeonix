@@ -26,7 +26,7 @@ const app = express();
 
 /* ================= MIDDLEWARE ================= */
 app.use(cors({
-  origin: ["https://tradeonix-frontend.vercel.app/", "https://tradeonix-dashboard.vercel.app/"],
+  origin: ["https://tradeonix-frontend.vercel.app", "https://tradeonix-dashboard.vercel.app"],
   credentials: true
 }));
 
