@@ -25,7 +25,7 @@ const Menu = ({ setActiveDrawer, activeDrawer }) => {
 
   const handleLogout = async () => {
   await axios.post(
-    "http://localhost:3002/api/logout",
+    "https://tradeonix.onrender.com/api/logout",
     {},
     { withCredentials: true }
   );

@@ -6,50 +6,50 @@ function Footer() {
       <div className="container border-top mt-5">
         <div className="row mt-5">
           <div className="col">
-            <img src="media/images/logo.png" style={{ width: "60%" }} />
+            <img src="media/images/logo.png" alt="logo"style={{ width: "60%" }} />
             <p>
               &copy; 2010 - 2026, Not Tradeonix Broking Ltd. All rights reserved.
             </p>
           </div>
           <div className="col">
             <p>Company</p>
-            <a href=""style={{ textDecoration: "none" }} className="text-muted">About</a>
+            <a href="/"style={{ textDecoration: "none" }} className="text-muted">About</a>
             <br />
-            <a href="" style={{ textDecoration: "none" }} className="text-muted">Products</a>
+            <a href="/" style={{ textDecoration: "none" }} className="text-muted">Products</a>
             <br />
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">Pricing</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">Pricing</a>
             <br />
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">Referral programme</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">Referral programme</a>
             <br />
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">Careers</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">Careers</a>
             <br />
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">Tradeonix.tech</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">Tradeonix.tech</a>
             <br />
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">Press & media</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">Press & media</a>
             <br />
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">Tradeonix cares (CSR)</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">Tradeonix cares (CSR)</a>
             <br />
           </div>
           <div className="col ">
             <p>Support</p>
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">Contact</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">Contact</a>
             <br />
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">Support portal</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">Support portal</a>
             <br />
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">Z-Connect blog</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">Z-Connect blog</a>
             <br />
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">List of charges</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">List of charges</a>
             <br />
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">Downloads & resources</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">Downloads & resources</a>
             <br />
           </div>
           <div className="col">
             <p>Account</p>
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">Open an account</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">Open an account</a>
             <br />
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">Fund transfer</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">Fund transfer</a>
             <br />
-            <a href=""style={{ textDecoration: "none" }}className="text-muted">60 day challenge</a>
+            <a href="/"style={{ textDecoration: "none" }}className="text-muted">60 day challenge</a>
             <br />
           </div>
         </div>

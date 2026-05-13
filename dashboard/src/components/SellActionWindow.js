@@ -22,7 +22,7 @@ const SellActionWindow = ({ uid, price }) => {
   }, [isMarket, price]);
 
   const handleSellClick = () => {
-    axios.post("http://localhost:3002/newOrder", 
+    axios.post("https://tradeonix.onrender.com/newOrder", 
       {
        name: uid,
       qty: Number(stockQuantity),

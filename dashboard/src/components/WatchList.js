@@ -20,7 +20,7 @@ const WatchList = ({ mobileOpen }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allHoldings", {
+      .get("https://tradeonix.onrender.com/allHoldings", {
         withCredentials: true,
       })
       .then((res) => {

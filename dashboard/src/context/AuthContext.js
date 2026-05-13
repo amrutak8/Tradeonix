@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
     const fetchUser = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:3002/api/me",
+          "https://tradeonix.onrender.com/api/me",
           { withCredentials: true }
         );
 

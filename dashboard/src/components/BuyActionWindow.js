@@ -19,7 +19,7 @@ const BuyActionWindow = ({ uid, price }) => {
   }, [isMarket, price]);
 
   const handleBuyClick = () => {
-    axios.post("http://localhost:3002/newOrder", 
+    axios.post("https://tradeonix.onrender.com/newOrder", 
       {
       name: uid,
       qty: Number(stockQuantity),

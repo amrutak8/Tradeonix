@@ -11,7 +11,7 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
  const { refreshHoldings } = useContext(GeneralContext);
   useEffect(() => {
-  axios.get("http://localhost:3002/allHoldings", {
+  axios.get("https://tradeonix.onrender.com/allHoldings", {
     withCredentials: true 
   })
   .then((res) => {
@@ -23,7 +23,7 @@ const Holdings = () => {
 }, [refreshHoldings]);
 
 const fetchHoldings = async () => {
-  const res = await axios.get("http://localhost:3002/allHoldings", {
+  const res = await axios.get("https://tradeonix.onrender.com/allHoldings", {
     withCredentials: true
   });
   setAllHoldings(res.data);

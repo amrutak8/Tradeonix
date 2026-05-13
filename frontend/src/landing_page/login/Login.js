@@ -15,7 +15,7 @@ function Login() {
   const handleLogin = async () => {
     try {
       await axios.post(
-        "http://localhost:3002/api/login",
+        "https://tradeonix.onrender.com/api/login",
         form,
         { withCredentials: true }
       );

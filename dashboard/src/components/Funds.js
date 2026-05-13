@@ -10,7 +10,7 @@ const Funds = () => {
   const fetchFunds = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:3002/funds",
+        "https://tradeonix.onrender.com/funds",
         {
           withCredentials: true,
         }
@@ -34,7 +34,7 @@ const Funds = () => {
 
     try {
       await axios.post(
-        "http://localhost:3002/addFunds",
+        "https://tradeonix.onrender.com/addFunds",
         {
           amount: Number(amount),
         },
@@ -58,7 +58,7 @@ const Funds = () => {
 
     try {
       await axios.post(
-        "http://localhost:3002/withdrawFunds",
+        "https://tradeonix.onrender.com/withdrawFunds",
         {
           amount: Number(amount),
         },

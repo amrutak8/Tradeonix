@@ -12,27 +12,27 @@ function Universe() {
         </p>
 
         <div className="col-4 p-3 mt-5">
-          <img src="media/images/smallcaseLogo.png" className="universe-logo"/>
+          <img src="media/images/smallcaseLogo.png" className="universe-logo" alt="universe"/>
           <p className="text-small text-muted">Thematic investment platform</p>
         </div>
         <div className="col-4 p-3 mt-5">
-          <img src="media/images/streakLogo.png" className="universe-logo"style={{width:"30%"}}  />
+          <img src="media/images/streakLogo.png" alt="streakLogo" className="universe-logo"style={{width:"30%"}}  />
           <p className="text-small text-muted mt-2">Algo & strategy platform</p>
         </div>
         <div className="col-4 p-3 mt-5">
-          <img src="media/images/sensibullLogo.svg" className="universe-logo" style={{width:"40%"}} />
+          <img src="media/images/sensibullLogo.svg" alt="sensibullLogo" className="universe-logo" style={{width:"40%"}} />
           <p className="text-small text-muted mt-3">Options trading platform</p>
         </div>
         <div className="col-4 p-3 mt-5">
-          <img src="media/images/TradeonixFundhouse.png" className="universe-logo" style={{width:"50%"}} />
+          <img src="media/images/TradeonixFundhouse.png"alt="TradeonixFundhouse" className="universe-logo" style={{width:"50%"}} />
           <p className="text-small text-muted mt-2">Asset management</p>
         </div>
         <div className="col-4 p-3 mt-5">
-          <img src="media/images/goldenpiLogo.png" className="universe-logo" style={{width:"50%"}}/>
+          <img src="media/images/goldenpiLogo.png" alt="goldenpiLogo" className="universe-logo" style={{width:"50%"}}/>
           <p className="text-small text-muted mt-2">Bonds trading platform</p>
         </div>
         <div className="col-4 p-3 mt-5">
-          <img src="media/images/dittoLogo.png" className="universe-logo"style={{width:"30%"}} />
+          <img src="media/images/dittoLogo.png"alt="dittoLogo" className="universe-logo"style={{width:"30%"}} />
           <p className="text-small text-muted mt-2">Insurance</p>
         </div>
         <Link to="/signup">

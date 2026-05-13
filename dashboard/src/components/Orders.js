@@ -5,7 +5,7 @@ const Orders = () => {
   const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/newOrder",{
+    axios.get("https://tradeonix.onrender.com/newOrder",{
       withCredentials: true
     })
       .then((res) => {

@@ -7,7 +7,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/api/me", {
+    axios.get("https://tradeonix.onrender.com/api/me", {
       withCredentials: true
     })
     .then(res => setUser(res.data))

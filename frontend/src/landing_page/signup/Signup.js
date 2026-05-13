@@ -35,7 +35,7 @@ const handleSignup = async () => {
 
   try {
     await axios.post(
-      "http://localhost:3002/api/signup",
+      "https://tradeonix.onrender.com/api/signup",
       form,
       { withCredentials: true }
     );

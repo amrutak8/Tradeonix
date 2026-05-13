@@ -29,7 +29,7 @@ function Stats() {
           </p>
         </div>
         <div className="col-6 p-5">
-          <img src="media/images/ecosystem.png" style={{ width: "90%" }} />
+          <img src="media/images/ecosystem.png" alt="ecosystem" style={{ width: "90%" }} />
           <div className="ecosystem-links">
             <a href="" className="mx-5" style={{ textDecoration: "none" }}>
               Explore our products{" "} <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
