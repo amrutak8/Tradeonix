@@ -14,7 +14,17 @@ function Login() {
 
 const handleLogin = async () => {
   try {
-    const res = await axios.post("/api/login", form);
+    const res = await axios.post(
+      "https://tradeonix.onrender.com/api/login",
+      form
+    );
+
+    console.log("LOGIN RESPONSE:", res.data);
+
+    if (!res.data.token) {
+      alert("Login failed: No token received");
+      return;
+    }
 
     localStorage.setItem("token", res.data.token);
     localStorage.setItem("user", JSON.stringify(res.data.user));
@@ -22,9 +32,10 @@ const handleLogin = async () => {
     window.location.href = "https://tradeonix-dashboard.vercel.app";
 
   } catch (err) {
-    alert(err.response?.data?.message);
+    console.log(err);
+    alert(err.response?.data?.message || "Login error");
   }
-  };
+};
 
   return (
     <div className="signupPageWrapper">

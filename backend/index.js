@@ -26,9 +26,15 @@ const app = express();
 
 /* ================= MIDDLEWARE ================= */
 app.use(cors({
-  origin: ["https://tradeonix-frontend.vercel.app", "https://tradeonix-dashboard.vercel.app"],
+  origin: [
+    "https://tradeonix-frontend.vercel.app",
+    "https://tradeonix-dashboard.vercel.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
+app.options("*", cors());
 
 app.use(bodyParser.json());
 app.use(cookieParser());
