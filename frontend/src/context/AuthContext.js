@@ -15,7 +15,11 @@ export const AuthProvider = ({ children }) => {
       return;
     }
 
-    axios.get("/api/me")
+    axios.get("/api/me", {
+  headers: {
+    Authorization: `Bearer ${token}`
+  }
+})
       .then((res) => {
         setUser(res.data);
       })

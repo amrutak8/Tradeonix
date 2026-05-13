@@ -25,14 +25,13 @@ const uri = process.env.MONGO_URL;
 const app = express();
 
 /* ================= MIDDLEWARE ================= */
-app.use(cors());
-// app.use(cors({
-//   origin: [
-//     "https://tradeonix-frontend.vercel.app",
-//     "https://tradeonix-dashboard.vercel.app"
-//   ],
-//   credentials: true
-// }));
+app.use(cors({
+  origin: [
+    "https://tradeonix-frontend.vercel.app",
+    "https://tradeonix-dashboard.vercel.app"
+  ],
+  credentials: true
+}));
 
 app.use(express.json());
 // app.use(cookieParser());
@@ -314,23 +313,7 @@ const userPositions = defaultPositions.map(item => ({
 
 await PositionsModel.insertMany(userPositions);
 
-await FundsModel.create({
-  userId: user._id,
 
-  availableMargin: 50000,
-  usedMargin: 0,
-  availableCash: 50000,
-  openingBalance: 50000,
-  payin: 0,
-
-  span: 0,
-  deliveryMargin: 0,
-  exposure: 0,
-  optionPremium: 0,
-
-  collateralLiquid: 0,
-  collateralEquity: 0,
-});
 
     const token = generateToken(user);
 
@@ -640,10 +623,7 @@ app.post("/withdrawFunds", protect, async (req, res) => {
   }
 });
 
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Server crashed");
-});
+
 app.listen(PORT, () => {
   console.log("App started!");
   mongoose.connect(uri);
