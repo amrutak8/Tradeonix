@@ -1,0 +1,705 @@
+/* =========================
+   GLOBAL
+========================= */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fff;
+  color: #444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.container,
+.container-fluid {
+  overflow-x: hidden;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  background: #fff !important;
+  padding: 10px 0;
+}
+
+
+
+.main-logo,
+.navbar-brand img {
+  width: 200px !important;
+  height: 70px !important;
+  object-fit: contain;
+  margin-left: 30px;
+  display: block;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.nav-link,
+.navbar-nav .nav-link {
+  margin-left: 28px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #444 !important;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #387ed1 !important;
+}
+/* MOBILE */
+
+@media screen and (max-width: 768px) {
+
+  .main-logo,
+  .navbar-brand img {
+    width: 130px !important;
+    height: 48px !important;
+    margin-left: 10px;
+  }
+
+}
+/* =========================
+   BUTTONS
+========================= */
+
+.btn-primary {
+  background-color: #387ed1 !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background-color: #2d6fc2 !important;
+}
+
+.hero-btn {
+  width: 240px !important;
+  padding: 10px 18px !important;
+  font-size: 20px !important;
+}
+
+/* =========================
+   ECOSYSTEM LINKS FIX
+========================= */
+
+.ecosystem-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 768px) {
+
+  .ecosystem-links {
+    justify-content: flex-start !important;
+    gap: 16px;
+    padding-left: 10px;
+  }
+
+  .ecosystem-links a {
+    margin: 0 !important;
+    font-size: 14px;
+  }
+
+}
+
+/* =========================
+   TEXT
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5;
+  color: #222;
+}
+
+p {
+  line-height: 1.8;
+  color: #555;
+}
+
+ul {
+  padding-left: 18px;
+}
+
+li {
+  line-height: 1.8;
+  color: #555;
+}
+
+/* =========================
+   HOME PAGE
+========================= */
+
+.home-page p,
+.home-page li,
+.home-page h1,
+.home-page a {
+  text-align: left;
+}
+
+
+.home-page h2,
+.home-page h3,
+.home-page h4 {
+  text-align: center;
+}
+
+.home-page ul {
+  padding-left: 18px;
+}
+
+.home-page li {
+  margin-bottom: 8px;
+}
+
+.home-page a {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.home-page .col-4,
+.home-page .col-6,
+.home-page .col-8 {
+  padding: 20px;
+}
+
+
+/* =========================
+   PRODUCT PAGE
+========================= */
+
+.product-section {
+  margin-bottom: 80px;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 500px;
+  height: 320px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.store-badges-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+.store-badge {
+  width: 160px !important;
+  height: auto !important;
+  object-fit: contain;
+  transition: 0.3s ease;
+}
+
+.store-badge:hover {
+  transform: scale(1.03);
+}
+
+.universe-logo {
+  width: 130px;
+  height: 60px;
+  object-fit: contain;
+}
+
+/* =========================
+   SIGNUP / LOGIN
+========================= */
+
+.topSection {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.topHeading {
+  text-align: center !important;
+}
+
+.topSubText {
+  text-align: center !important;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.rightSection input {
+  width: 100%;
+}
+
+.rightSection button {
+  width: 60% !important;
+  margin: 15px auto 0 auto !important;
+  display: block;
+}
+
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-page h1 {
+  text-align: center !important;
+  margin-bottom: 25px;
+}
+
+.about-page h2,
+.about-page h3,
+
+.about-page h5 {
+  text-align: left !important;
+}
+
+.about-page p,
+.about-page li {
+  text-align: left !important;
+  line-height: 1.9;
+}
+
+.about-page .col-4,
+.about-page .col-6,
+.about-page .col-8 {
+  padding: 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  overflow-x: hidden;
+  background: #fafafa;
+  padding-top: 45px;
+}
+
+footer .col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+footer img {
+  width: 160px !important;
+  margin-bottom: 12px;
+}
+
+footer p {
+  text-align: left !important;
+  line-height: 1.5;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px !important;
+}
+
+footer a {
+  text-align: left !important;
+  color: #666 !important;
+  font-size: 14px;
+  line-height: 1.3;
+  margin-bottom: 4px !important;
+  padding: 0 !important;
+  display: block;
+}
+
+footer a:hover {
+  color: #387ed1 !important;
+}
+
+footer .col p:first-child {
+  color: #222 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin-bottom: 10px !important;
+}
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+@media screen and (max-width: 992px) {
+
+  .navbar {
+    position: relative;
+  }
+
+  .navbar .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .main-logo,
+  .navbar-brand img {
+    width: 135px;
+  }
+
+  .navbar-toggler {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 4px 8px;
+    z-index: 999;
+  }
+
+  .navbar-collapse {
+    width: 100%;
+    background: #fff;
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+  }
+
+  .navbar-nav {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    margin-left: 0 !important;
+    padding: 14px 0;
+    font-size: 17px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mobile-menu {
+    background: #fff;
+  }
+
+  .mobile-close-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
+
+  .mobile-close-btn,
+  .close-btn {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .mobile-nav-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .mobile-nav-grid .nav-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .mobile-nav-grid .nav-link {
+    border: none;
+    padding: 8px 0 !important;
+  }
+
+  /* GLOBAL MOBILE */
+
+  .row {
+    flex-direction: column !important;
+  }
+
+  .col,
+  .col-4,
+  .col-6,
+  .col-8,
+  .col-md-4,
+  .col-md-6,
+  .col-md-8 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 100% !important;
+    padding: 15px !important;
+  }
+
+  img {
+    height: auto;
+  }
+
+  h1 {
+    font-size: 30px !important;
+  }
+
+  h2 {
+    font-size: 25px !important;
+  }
+
+  h3 {
+    font-size: 21px !important;
+  }
+
+  p,
+  li {
+    font-size: 15px !important;
+  }
+
+  /* HOME PAGE */
+
+  .home-page p,
+  .home-page li,
+  .home-page a {
+    text-align: left !important;
+  }
+
+  .home-page h1,
+  .home-page h2,
+  .home-page h3 {
+    text-align: center !important;
+  }
+
+  .hero-btn {
+    min-width: 160px;
+    padding: 10px 22px !important;
+    font-size: 15px !important;
+  }
+
+  /* PRODUCT PAGE */
+
+  .product-section {
+    text-align: center;
+  }
+
+  .product-image {
+    height: 220px;
+    margin-bottom: 20px;
+  }
+
+  .store-badges-container {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .store-badge {
+    width: 130px !important;
+  }
+
+  .universe-logo {
+    width: 105px;
+    height: 50px;
+  }
+
+  /* FOOTER */
+
+  footer .row {
+    flex-direction: column;
+  }
+
+  footer .col {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media screen and (max-width: 576px) {
+
+  .container,
+  .container-fluid {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+
+  .main-logo,
+  .navbar-brand img {
+    width: 150px;
+  }
+
+  h1 {
+    font-size: 26px !important;
+  }
+
+  h2 {
+    font-size: 22px !important;
+  }
+
+  h3 {
+    font-size: 18px !important;
+  }
+
+  p,
+  li {
+    font-size: 14px !important;
+    line-height: 1.7;
+  }
+
+  .hero-btn {
+    min-width: 150px;
+    padding: 9px 20px !important;
+    font-size: 14px !important;
+  }
+
+  .topHeading {
+    font-size: 25px !important;
+  }
+
+  .topSubText {
+    font-size: 14px !important;
+    padding: 0 10px;
+  }
+
+  .store-badge {
+    width: 115px !important;
+  }
+
+  footer p,
+  footer a {
+    font-size: 13px !important;
+  }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+
+  .rightSection button,
+  .signup-btn {
+    width: 100% !important;
+    display: block;
+    margin-top: 15px;
+  }
+
+}
+
+/* =========================
+   ABOUT PAGE RESPONSIVE FIX
+========================= */
+
+@media screen and (max-width: 768px) {
+
+  /* HEADINGS */
+
+  .about-page h1 {
+    font-size: 24px !important;
+    text-align: center !important;
+    line-height: 1.4;
+    margin-bottom: 18px;
+  }
+
+  .about-page h2,
+  .about-page h3,
+  .about-page h4{
+    font-size: 22px !important;
+    text-align: center !important;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+  .about-page h6{
+    text-align: center !important;
+  }
+
+  /* PARAGRAPHS */
+
+  .about-page p,
+  .about-page li {
+    text-align: left !important;
+    font-size: 14px !important;
+    line-height: 1.8;
+  }
+
+  /* SPACING */
+
+  .about-page .col-4,
+  .about-page .col-6,
+  .about-page .col-8 {
+    padding: 15px !important;
+  }
+
+}
+/* =========================
+   ABOUT PAGE RESPONSIVE
+========================= */
+
+@media screen and (max-width: 768px) {
+
+  .about-page .heading-responsive {
+    font-size: 22px !important;
+    line-height: 1.6;
+  }
+
+  /* FIRST LINE */
+
+  .about-page .heading-responsive {
+    text-align: normal !important;
+  }
+
+  /* SECOND LINE */
+
+  .about-page .heading-responsive br + * {
+    text-align: left !important;
+  }
+
+}
+
+/* =====================================
+   PROFESSIONAL FOOTER CREDIT
+===================================== */
+
+.creator-tag {
+  width: 100%;
+
+  text-align: center;
+
+  padding: 10px 0 14px;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  color: #9aa0a6;
+
+  letter-spacing: 0.3px;
+
+  user-select: none;
+}
+
+/* MOBILE */
+@media screen and (max-width: 768px) {
+  .creator-tag {
+    font-size: 10px;
+    padding: 8px 0 12px;
+  }
+}

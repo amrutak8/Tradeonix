@@ -1,0 +1,155 @@
+/* ================= MAIN WRAPPER ================= */
+.signupPageWrapper {
+  padding-top: 80px; 
+}
+
+/* ================= TOP HEADING ================= */
+.topSection {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.topHeading {
+  font-size: 30px;
+  font-weight: 500;
+  color: #424242;
+  margin-bottom: 18px;
+}
+
+.topSubText {
+  font-size: 25px;
+  color: #6b7280;
+}
+
+/* ================= MAIN LAYOUT ================= */
+.signupPage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  gap: 60px;
+  padding: 20px 80px;
+
+  flex-wrap: nowrap;
+}
+
+/* ================= LEFT SECTION ================= */
+.leftSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.leftSection img {
+  width: 100%;
+  max-width: 700px;
+}
+
+/* ================= RIGHT SECTION ================= */
+.rightSection {
+  flex: 1;
+  max-width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center inputs */
+   margin-Bottom: 120px;
+}
+
+/* ================= FORM TITLE ================= */
+.rightSection h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.subText {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 20px;
+}
+
+/* ================= INPUT ================= */
+.rightSection input {
+  width: 300px;              
+  padding: 12px;
+  margin-bottom: 12px;
+
+  border: 1px solid #ccc;
+  border-radius: 6px;
+
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.rightSection input:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 4px rgba(25, 118, 210, 0.3);
+}
+
+/* ================= BUTTON ================= */
+.rightSection button {
+  width: 300px;              
+  padding: 12px;
+
+  background: #387ed1;
+  color: white;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.rightSection button:hover {
+  background: #2c6bc0;
+}
+
+/* ================= LOGIN LINK ================= */
+.loginLink {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.loginLink a {
+  color: #387ed1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.loginLink a:hover {
+  text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .signupPage {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .leftSection {
+    display: none; /* hide image on mobile */
+  }
+
+  .topHeading {
+    font-size: 24px;
+  }
+
+  .topSubText {
+    font-size: 14px;
+  }
+}
+
+.errorText {
+  color: #e53935; 
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: left;
+  width: 100%;
+  max-width: 350px;
+}
