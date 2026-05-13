@@ -78,7 +78,7 @@ const generateToken = (user) => {
 };
 
 /* ================= AUTH MIDDLEWARE ================= */
-const protect = require("./authmiddleware");
+const protect = require("./middleware/authMiddleware");
 
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [
