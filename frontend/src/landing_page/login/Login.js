@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../auth.css"; 
-import axios from ".../axiosConfig";
+import axios from "../../axiosConfig";
 
 function Login() {
   const [form, setForm] = useState({

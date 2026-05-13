@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from ".../axiosConfig.js";
+import axios from "../../axiosConfig";
 import "../auth.css";
 
 
