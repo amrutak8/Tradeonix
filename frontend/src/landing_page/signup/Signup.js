@@ -43,8 +43,10 @@ const handleSignup = async () => {
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
       
-      window.location.href =
-        "https://tradeonix-dashboard.vercel.app";;
+      const token = res.data.token;
+
+window.location.href =
+  `https://tradeonix-dashboard.vercel.app?token=${token}`;
 
   } catch (err) {
      setError(err.response?.data?.message || "Signup failed");

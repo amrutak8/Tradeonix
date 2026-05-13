@@ -9,15 +9,32 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
 
+    // GET TOKEN FROM URL
+    const params = new URLSearchParams(window.location.search);
+
+    const urlToken = params.get("token");
+
+    // SAVE TOKEN
+    if (urlToken) {
+
+      localStorage.setItem("token", urlToken);
+
+      // REMOVE TOKEN FROM URL
+      window.history.replaceState(
+        {},
+        document.title,
+        window.location.pathname
+      );
+    }
+
+    // GET TOKEN
     const token = localStorage.getItem("token");
 
-    // NO TOKEN
     if (!token) {
       setUser(null);
       return;
     }
 
-    // FETCH USER
     axios.get(
       "https://tradeonix.onrender.com/api/me",
       {
