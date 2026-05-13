@@ -10,29 +10,30 @@ const Funds = () => {
 
   const token = localStorage.getItem("token");
 
-  const fetchFunds = async () => {
+const fetchFunds = React.useCallback(async () => {
 
-    try {
+  try {
 
-      const res = await axios.get(
-        "https://tradeonix.onrender.com/funds",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+    const res = await axios.get(
+      "https://tradeonix.onrender.com/funds",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
 
-      setFunds(res.data);
+    setFunds(res.data);
 
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  } catch (err) {
+    console.log(err);
+  }
 
-  useEffect(() => {
-    fetchFunds();
-  }, [refreshHoldings]);
+}, [token]);
+
+useEffect(() => {
+  fetchFunds();
+}, [refreshHoldings, fetchFunds]);
 
   // ================= ADD FUNDS =================
 
