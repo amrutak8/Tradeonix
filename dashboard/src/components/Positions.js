@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../axiosConfig";
 // import { VerticalGraph } from "./VerticalGraph";
 
 // import { positions } from "../data/data";
@@ -7,13 +7,22 @@ const Positions = () => {
   const [allPostions, setAllPositions] = useState([]);
 
   useEffect(() => {
-  axios.get("https://tradeonix.onrender.com/allPositions", {
-    withCredentials: true
-  })
+
+  const token = localStorage.getItem("token");
+
+  axios.get(
+    "https://tradeonix.onrender.com/allPositions",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  )
   .then((res) => {
     setAllPositions(res.data);
   })
   .catch((err) => console.error(err));
+
 }, []);
 
   return (

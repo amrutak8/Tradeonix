@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import axios from "axios";
+import axios from "../axiosConfig";
 
 import GeneralContext from "./GeneralContext";
 
@@ -18,28 +18,38 @@ const WatchList = ({ mobileOpen }) => {
   const [watchlist, setWatchlist] = useState([]);
 
 
-  useEffect(() => {
-    axios
-      .get("https://tradeonix.onrender.com/allHoldings", {
-        withCredentials: true,
-      })
-      .then((res) => {
-        const data = res.data.map((stock) => {
-          const change = (Math.random() * 2 - 1).toFixed(2); // -1% to +1%
-          const newPrice = (stock.price * (1 + change / 100)).toFixed(2);
+useEffect(() => {
 
-          return {
-            name: stock.name,
-            price: Number(newPrice),
-            percent: `${change}%`,
-            isDown: change < 0,
-          };
-        });
+  const token = localStorage.getItem("token");
 
-        setWatchlist(data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+  axios
+    .get("https://tradeonix.onrender.com/allHoldings", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((res) => {
+      const data = res.data.map((stock) => {
+        const change = (Math.random() * 2 - 1).toFixed(2);
+
+        const newPrice = (
+          stock.price *
+          (1 + change / 100)
+        ).toFixed(2);
+
+        return {
+          name: stock.name,
+          price: Number(newPrice),
+          percent: `${change}%`,
+          isDown: change < 0,
+        };
+      });
+
+      setWatchlist(data);
+    })
+    .catch((err) => console.log(err));
+
+}, []);
 
   
   useEffect(() => {

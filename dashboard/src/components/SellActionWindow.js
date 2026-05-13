@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios from "../axiosConfig";
 
 import GeneralContext from "./GeneralContext";
 import "./SellActionWindow.css";
@@ -21,22 +21,40 @@ const SellActionWindow = ({ uid, price }) => {
     }
   }, [isMarket, price]);
 
-  const handleSellClick = () => {
-    axios.post("https://tradeonix.onrender.com/newOrder", 
-      {
-       name: uid,
-      qty: Number(stockQuantity),
-      price: Number(stockPrice),
-      mode: "SELL",
-    },
-    {
-    withCredentials: true   
-    },
-  );
-     generalContext.triggerRefresh();
-    generalContext.closeSellWindow();
-  };
+const handleSellClick = async () => {
 
+  try {
+
+    const token = localStorage.getItem("token");
+
+    await axios.post(
+      "https://tradeonix.onrender.com/newOrder",
+      {
+        name: uid,
+        qty: Number(stockQuantity),
+        price: Number(stockPrice),
+        mode: "SELL",
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    generalContext.triggerRefresh();
+
+    generalContext.closeSellWindow();
+
+  } catch (err) {
+
+    console.log(err);
+
+    alert(
+      err.response?.data?.message || "Sell failed"
+    );
+  }
+};
   const handleCancelClick = () => {
     generalContext.closeSellWindow();
   };

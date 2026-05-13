@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../axiosConfig";
 import { useContext } from "react";
 import GeneralContext from "./GeneralContext";
  import { VerticalGraph } from "./VerticalGraph";
@@ -8,30 +8,42 @@ import GeneralContext from "./GeneralContext";
 
 
 const Holdings = () => {
-  const [allHoldings, setAllHoldings] = useState([]);
- const { refreshHoldings } = useContext(GeneralContext);
-  useEffect(() => {
-  axios.get("https://tradeonix.onrender.com/allHoldings", {
-    withCredentials: true 
-  })
-  .then((res) => {
-    setAllHoldings(res.data);
-  })
-  .catch((err) => {
-    console.error(err);
-  });
-}, [refreshHoldings]);
+ const [allHoldings, setAllHoldings] = useState([]);
+
+const { refreshHoldings } = useContext(GeneralContext);
 
 const fetchHoldings = async () => {
-  const res = await axios.get("https://tradeonix.onrender.com/allHoldings", {
-    withCredentials: true
-  });
-  setAllHoldings(res.data);
+
+  try {
+
+    const token = localStorage.getItem("token");
+
+    const res = await axios.get(
+      "https://tradeonix.onrender.com/allHoldings",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    setAllHoldings(res.data);
+
+  } catch (err) {
+
+    console.error(err);
+
+  }
 };
 
 useEffect(() => {
+
   fetchHoldings();
-},  [refreshHoldings]);
+
+}, [refreshHoldings]);
+
+
+
   
   const labels = allHoldings.map((subArray) => subArray["name"]);
 

@@ -1,18 +1,27 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios from "../axiosConfig";
 
 const Orders = () => {
   const [allOrders, setAllOrders] = useState([]);
 
-  useEffect(() => {
-    axios.get("https://tradeonix.onrender.com/newOrder",{
-      withCredentials: true
+useEffect(() => {
+
+  const token = localStorage.getItem("token");
+
+  axios.get(
+    "https://tradeonix.onrender.com/newOrder",
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  )
+    .then((res) => {
+      setAllOrders(res.data);
     })
-      .then((res) => {
-        setAllOrders(res.data);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+    .catch((err) => console.error(err));
+
+}, []);
 
   return (
     <>
