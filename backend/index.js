@@ -369,7 +369,7 @@ app.post("/api/logout", (req, res) => {
 app.get("/api/me", protect, async (req, res) => {
   const user = await UserModel.findById(req.user.id).select("-password");
   res.json(user);
-  console.log("COOKIE RECEIVED:", req.cookies);
+  
 });
 
 app.get("/allHoldings", protect, async (req, res) => {

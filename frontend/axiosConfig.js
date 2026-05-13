@@ -1,10 +1,11 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://tradeonix.onrender.com",
+  baseURL: "https://tradeonix.onrender.com"
 });
 
 instance.interceptors.request.use((config) => {
+
   const token = localStorage.getItem("token");
 
   if (token) {

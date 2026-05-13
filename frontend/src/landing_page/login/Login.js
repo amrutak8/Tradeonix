@@ -14,10 +14,7 @@ function Login() {
 
 const handleLogin = async () => {
   try {
-    const res = await axios.post(
-      "https://tradeonix.onrender.com/api/login",
-      form
-    );
+    const res = await axios.post("/api/login", form);
 
     console.log("LOGIN RESPONSE:", res.data);
 
