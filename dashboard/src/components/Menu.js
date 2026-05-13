@@ -10,7 +10,7 @@ import AppsRoundedIcon from "@mui/icons-material/AppsRounded";
 const Menu = ({ setActiveDrawer, activeDrawer }) => {
   const { user } = useContext(AuthContext);
   const [selectedMenu, setSelectedMenu] = useState(0);
-  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  //const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const [setMobileMenuOpen] = useState(false);
