@@ -3,9 +3,9 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-///const cors = require("cors");
+const cors = require("cors");
 
-const cookieParser = require("cookie-parser");
+//const cookieParser = require("cookie-parser");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { UserModel } = require("./model/User");
@@ -25,58 +25,57 @@ const uri = process.env.MONGO_URL;
 const app = express();
 
 /* ================= MIDDLEWARE ================= */
-// app.use(cors({
-//   origin: [
-//     "https://tradeonix-frontend.vercel.app",
-//     "https://tradeonix-dashboard.vercel.app"
-//   ],
-//   credentials: true
-// }));
-
+app.use(cors({
+  origin: [
+    "https://tradeonix-frontend.vercel.app",
+    "https://tradeonix-dashboard.vercel.app"
+  ],
+  credentials: true
+}));
 
 app.use(express.json());
-app.use(cookieParser());
-app.use((req, res, next) => {
+// app.use(cookieParser());
+// app.use((req, res, next) => {
 
-  res.header(
-    "Access-Control-Allow-Origin",
-    "https://tradeonix-frontend.vercel.app"
-  );
+//   res.header(
+//     "Access-Control-Allow-Origin",
+//     "https://tradeonix-frontend.vercel.app"
+//   );
 
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+//   );
 
-  res.header(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, DELETE, OPTIONS"
-  );
+//   res.header(
+//     "Access-Control-Allow-Methods",
+//     "GET, POST, PUT, DELETE, OPTIONS"
+//   );
 
-  res.header(
-    "Access-Control-Allow-Credentials",
-    "true"
-  );
+//   res.header(
+//     "Access-Control-Allow-Credentials",
+//     "true"
+//   );
 
-  if (req.method === "OPTIONS") {
-    return res.sendStatus(200);
-  }
+//   if (req.method === "OPTIONS") {
+//     return res.sendStatus(200);
+//   }
 
-  next();
-});
+//   next();
+// });
 
-/* ================= JWT UTILS ================= */
-const generateToken = (user) => {
-  return jwt.sign(
-    {
-      id: user._id,
-      username: user.username,
-      email: user.email
-    },
-    process.env.JWT_SECRET,
-    { expiresIn: "7d" }
-  );
-};
+// /* ================= JWT UTILS ================= */
+// const generateToken = (user) => {
+//   return jwt.sign(
+//     {
+//       id: user._id,
+//       username: user.username,
+//       email: user.email
+//     },
+//     process.env.JWT_SECRET,
+//     { expiresIn: "7d" }
+//   );
+// };
 
 /* ================= AUTH MIDDLEWARE ================= */
 const protect = require("./authmiddleware");
