@@ -13,15 +13,15 @@ const Menu = ({ setActiveDrawer, activeDrawer }) => {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [open, setOpen] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [setMobileMenuOpen] = useState(false);
 
   const handleMenuClick = (index) => {
     setSelectedMenu(index);
   };
 
-  const handleProfileClick = (index) => {
-    setIsProfileDropdownOpen(!isProfileDropdownOpen);
-  };
+  // const handleProfileClick = (index) => {
+  //   setIsProfileDropdownOpen(!isProfileDropdownOpen);
+  // };
 
   const handleLogout = async () => {
   await axios.post(
@@ -38,7 +38,7 @@ const Menu = ({ setActiveDrawer, activeDrawer }) => {
 
   return (
     <div className="menu-container">
-      <img src="logo.png" style={{ width: "50px" }} />
+      <img src="logo.png" alt="logo"style={{ width: "50px" }} />
     <div className="mobile-buttons">
 
 <button

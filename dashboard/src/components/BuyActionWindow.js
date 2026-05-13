@@ -10,7 +10,7 @@ const BuyActionWindow = ({ uid, price }) => {
   const [isMarket, setIsMarket] = useState(true);
 
   const generalContext = useContext(GeneralContext);
-  const { triggerRefresh } = useContext(GeneralContext);
+  
 
   useEffect(() => {
     if (isMarket) {
