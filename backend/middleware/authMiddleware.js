@@ -1,12 +1,17 @@
 const jwt = require("jsonwebtoken");
 
-const protect = (req, res, next) => {
+module.exports = async (req, res, next) => {
+
   try {
+
     const authHeader = req.headers.authorization;
 
-    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    if (
+      !authHeader ||
+      !authHeader.startsWith("Bearer ")
+    ) {
       return res.status(401).json({
-        message: "Not logged in",
+        message: "No token",
       });
     }
 
@@ -22,12 +27,9 @@ const protect = (req, res, next) => {
     next();
 
   } catch (err) {
-    console.log(err);
 
     return res.status(401).json({
       message: "Invalid token",
     });
   }
 };
-
-module.exports = protect;

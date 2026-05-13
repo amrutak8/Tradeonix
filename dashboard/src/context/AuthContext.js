@@ -4,45 +4,51 @@ import axios from "../axiosConfig";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    let mounted = true; 
 
-    const fetchUser = async () => {
-      try {
-        const res = await axios.get(
-          "https://tradeonix.onrender.com/api/me",
-          { withCredentials: true }
-        );
+    const token = localStorage.getItem("token");
 
-        if (mounted) {
-          setUser(res.data);
-          setLoading(false);
-        }
+    // NO TOKEN
+    if (!token) {
+      setUser(null);
+      return;
+    }
 
-      } catch (err) {
-        if (mounted) {
-          setLoading(false);
-          setUser(null);
-        }
+    // FETCH USER
+    axios.get(
+      "https://tradeonix.onrender.com/api/me",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       }
-    };
+    )
 
-    fetchUser();
+    .then((res) => {
 
-    return () => {
-      mounted = false;
-    };
+      console.log("USER DATA:", res.data);
+
+      setUser(res.data);
+
+    })
+
+    .catch((err) => {
+
+      console.log(err);
+
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+
+      setUser(null);
+    });
+
   }, []);
 
-  
-
-  if (loading) return <h2>Loading...</h2>;
-
   return (
-    <AuthContext.Provider value={{ user }}>
+    <AuthContext.Provider value={{ user, setUser }}>
       {children}
     </AuthContext.Provider>
   );
